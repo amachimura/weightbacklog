@@ -1,0 +1,4 @@
+com\machworks\tomcat\service\HelloWorldService.class
+com\machworks\tomcat\SampleTomcatApplication$1.class
+com\machworks\tomcat\web\SampleController.class
+com\machworks\tomcat\SampleTomcatApplication.class
