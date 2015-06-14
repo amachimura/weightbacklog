@@ -78,7 +78,4 @@
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-test/4.0.3.RELEASE/spring-test-4.0.3.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/projectlombok/lombok/1.16.4/lombok-1.16.4.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/javax.persistence/2.1.0/javax.persistence-2.1.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/postgresql/postgresql/9.3-1102-jdbc41/postgresql-9.3-1102-jdbc41.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/flywaydb/flyway-core/3.2.1/flyway-core-3.2.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/lazyluke/log4jdbc-remix/0.2.7/log4jdbc-remix-0.2.7.jar"/>
 </classpath>
