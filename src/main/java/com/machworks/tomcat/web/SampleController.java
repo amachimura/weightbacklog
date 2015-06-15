@@ -30,7 +30,6 @@ public class SampleController {
 	private HelloWorldService helloWorldService;
 
 	@RequestMapping("/")
-	@ResponseBody
 	public String helloWorld() {
 		return "index";
 	}
