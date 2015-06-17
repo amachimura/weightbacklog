@@ -18,5 +18,4 @@ public class DailyWeight {
 	private Long user_id;
 	private ZonedDateTime today_date;
 	private Float weight;
-	private Float mokuhyou;
 }

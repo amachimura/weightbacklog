@@ -17,5 +17,5 @@ private ZonedDateTime start_date;
 private Float goal_weight;
 private Float end_weight;
 private ZonedDateTime goal_date;
-private int sprintSpan;
+private long sprintSpan;
 }

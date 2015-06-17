@@ -4,6 +4,7 @@ import java.time.ZonedDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
@@ -12,7 +13,7 @@ import lombok.Data;
 @Data
 public class GoalEntity {
 @Id
-@GeneratedValue
+@GeneratedValue(strategy = GenerationType.AUTO)
 private Long id;
 private Long user_id;
 private String slogan;
@@ -21,4 +22,5 @@ private ZonedDateTime start_date;
 private Float goal_weight;
 private Float end_weight;
 private ZonedDateTime goal_date;
+private long sprintSpan;
 }

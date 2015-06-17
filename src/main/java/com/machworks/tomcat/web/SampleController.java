@@ -29,7 +29,6 @@ public class SampleController {
 	@Autowired
 	private HelloWorldService helloWorldService;
 
-	@RequestMapping("/")
 	public String helloWorld() {
 		return "index";
 	}
