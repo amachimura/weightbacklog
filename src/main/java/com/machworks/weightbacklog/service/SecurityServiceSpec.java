@@ -5,4 +5,5 @@ import com.machworks.weightbacklog.dto.UserDto;
 public interface SecurityServiceSpec {
 	String registerUser(UserDto user);
 	boolean isValidUser(UserDto user);
+	Long generateId();
 }

@@ -1,4 +1,4 @@
-package com.machworks.weightbacklog.dto;
+package com.machworks.weightbacklog.controller.viewentity;
 
 import java.time.ZonedDateTime;
 
@@ -9,10 +9,10 @@ import javax.persistence.Id;
 import lombok.Data;
 
 @Data
-public class DailyWeightDto {
-	private Long sprint_id;
-	private Long user_id;
-	private ZonedDateTime today_date;
+public class DailyWeightViewEntity {
+	private Long userId;
+	private Long sprintId;
+	private ZonedDateTime todayDate;
 	private Float weight;
 	private boolean toFacebook;
 }

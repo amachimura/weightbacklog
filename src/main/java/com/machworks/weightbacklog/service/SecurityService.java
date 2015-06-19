@@ -12,14 +12,16 @@ public class SecurityService implements SecurityServiceSpec{
 	@Autowired
 	private UserRepository userRepo;
 
+	@Override
 	public boolean isValidUser(UserDto user) {
 		return !userRepo.exists(user.getId());
 	}
 	
-	private Long generateUserId(){
+	@Override
+	public Long generateId(){
 		return (long)Math.random()*100000;
 	}
-	
+	@Override
 	public String registerUser(UserDto user) {
 		if(isValidUser(user)){
 			return "this user is already registered";

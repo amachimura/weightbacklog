@@ -27,15 +27,16 @@ public class ReportMakingService implements ReportMakingServiceSpec {
 	@Autowired
 	private GoalRepository goalRepo;
 
-	public String saveAndReport(User user, DailyWeightDto data) {
-		saveDailyWeight(user, data);
-		String report = generateReport(user, data);
+	@Override
+	public String saveAndReport(DailyWeightDto data) {
+		saveDailyWeight(data);
+		String report = generateReport(data);
 		return report;
 	}
-
-	public String generateReport(User user, DailyWeightDto data) {
-		GoalEntity currentGoal = goalRepo.findByDate(data.getToday_date(), user.getId());
-		Sprint currentSprint = sprintRepo.findByDate(data.getToday_date(), user.getId());
+    @Override
+	public String generateReport(DailyWeightDto data) {
+    	Sprint currentSprint = sprintRepo.findOne(data.getSprint_id());
+		GoalEntity currentGoal = goalRepo.findOne(currentSprint.getGoal_id());
 		
 		DailyReport weight = new DailyReport(currentGoal.getSlogan(), data.getToday_date(),
 				data.getWeight(), currentSprint.getGoal_date(),
@@ -71,10 +72,10 @@ public class ReportMakingService implements ReportMakingServiceSpec {
 	}
 
 
-	private void saveDailyWeight(User user, DailyWeightDto data) {
+	private void saveDailyWeight(DailyWeightDto data) {
 		DailyWeight entity = new DailyWeight();
-		entity.setSprint_id(data.getUser_id());
-		entity.setUser_id(user.getId());
+		entity.setSprint_id(data.getSprint_id());
+		entity.setUser_id(data.getUser_id());
 		entity.setToday_date(data.getToday_date());
 		entity.setWeight(data.getWeight());
 		dailyRepo.save(entity);

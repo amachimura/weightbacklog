@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.machworks.weightbacklog.dto.UserDto;
 import com.machworks.weightbacklog.service.SecurityServiceSpec;
 
 @Controller
@@ -16,6 +18,16 @@ public class SecurityController {
 	@RequestMapping("/")
 	public String showLogin() {
 		return "index";
+	}
+	
+	@RequestMapping("/register")
+	public String registerUser(@RequestParam(value="userName")String userName, @RequestParam(value="password")String password){
+		UserDto user = new UserDto();
+		user.setId(service.generateId());
+		user.setUserName(userName);
+		user.setPassword(password);
+		service.registerUser(user);
+		return "redirect:/admin/"+userName;
 	}
 	
 	@RequestMapping("/admin/{userName}")
