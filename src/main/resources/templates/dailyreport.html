@@ -41,14 +41,14 @@
 			</div>
 			<div class="panel-body">
 				<div class="form-group input-required">
-					<input id="goaldate" type="text" class="form-control" required
-						placeholder="due to?" /> <input id="goalweight" type="text"
-						class="form-control" required placeholder="input your current weight" />
-					<span>kg</span>
+					<input id="todayweight" type="text" class="form-control" required="required"
+						placeholder="input your current weight" /> <span>kg</span>
 				</div>
+				<input type="submit" id="submit" value="submit" />
 			</div>
 		</div>
-		<input type="submit" id="submit">
 	</form>
+	<div id="reportArea"></div>
+	<button type="button" id="postToFacebook" value="facebookに投稿">facebookに投稿する</button>
 </body>
 </html>

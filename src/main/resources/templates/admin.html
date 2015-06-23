@@ -43,10 +43,12 @@
 			</div>
 			<div class="panel-body">
 				<div class="form-group input-required">
-					<input id="goaldate" type="text" class="form-control" required
+					<input id="goaldate" type="text" class="form-control" required="true"
 						placeholder="due to?" /> <input id="goalweight" type="text"
-						class="form-control" required placeholder="input your goal weight" />
-					<span>kg</span> <select id="sprintSpan">
+						class="form-control" required="true" placeholder="input your goal weight" />
+					<span>kg</span>
+					<p>スプリントの期間は？</p>
+					 <select id="sprintSpan">
 						<option value="7">1週間</option>
 						<option value="14">2週間</option>
 						<option value="21">3週間</option>
@@ -55,7 +57,7 @@
 				</div>
 			</div>
 		</div>
-		<input type="submit" id="submit">
+		<input type="submit" id="submit" value="送信"/>
 	</form>
 </body>
 </html>
