@@ -33,17 +33,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+<form action="register" method="POST">
 <div class="tile tile-login">
   <h3 class="logo">Hoarrd!</h3>
   <div class="input-icon">
     <span class="fa-user fa"></span>
-    <input type="text" class="form-control" placeholder="Username" />
+    <input type="text" name="userName" class="form-control" placeholder="Username" />
   </div>
   <div class="input-icon">
     <span class="fa-lock fa"></span>
-    <input type="password" class="form-control" placeholder="******" />
+    <input type="password" name="password" class="form-control" placeholder="******" />
   </div>
-  <a href="#" class="btn btn-block btn-primary btn-embossed">Log in</a>
+  <input type="submit" class="btn btn-block btn-primary btn-embossed" value="log in!" />
   <div class="login-action clearfix">
     <div class="col-md-8">
       <label class="checkbox">
@@ -55,5 +56,6 @@
     </div>
   </div>
 </div>
+</form>
 </body>
 </html>
