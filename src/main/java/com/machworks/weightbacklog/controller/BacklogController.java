@@ -37,9 +37,13 @@ public class BacklogController {
 		dto.setSprintSpan(entity.getSprintSpan());
 		return master.createGoalAndSprints(dto);
 	}
-	
+
+
 	@RequestMapping("/report")
 	@ResponseBody
+	/**
+	 * save the dailyreport
+	 */
 	public Map<String,Object> dailyReport(@RequestBody DailyWeightViewEntity entity){
 		DailyWeightDto dto = new DailyWeightDto();
 		dto.setUser_id(entity.getUserId());

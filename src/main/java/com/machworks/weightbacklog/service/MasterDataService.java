@@ -1,6 +1,8 @@
 package com.machworks.weightbacklog.service;
 
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -33,6 +35,13 @@ public class MasterDataService implements MasterDataServiceSpec {
 		return true;
 	}
 	private void generateAndSaveSprints(GoalEntity goal) {
+		List<Sprint> sprints = generateSprints(goal);
+		sprints.stream().forEach(s -> saveSprint(s));
+	}
+
+    @Override
+	public List<Sprint> generateSprints(GoalEntity goal) {
+		List<Sprint> sprints = new ArrayList<>();
 		ZonedDateTime dateCounter = goal.getStart_date();
 		Long goalId = goal.getId();
 		Long userId = goal.getUser_id();
@@ -43,9 +52,10 @@ public class MasterDataService implements MasterDataServiceSpec {
 			sprint.setUser_id(userId);
 			sprint.setStart_date(dateCounter);
 			sprint.setGoal_date(dateCounter.plusDays(sprintSpan));
-			saveSprint(sprint);
+			sprints.add(sprint);
 			dateCounter = dateCounter.plusDays(sprintSpan);
 		}
+		return sprints;
 	}
 
 	@Override
