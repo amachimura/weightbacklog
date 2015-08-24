@@ -1,5 +1,7 @@
 package com.machworks.weightbacklog.controller;
 
+import com.machworks.weightbacklog.dto.GoalDto;
+import com.machworks.weightbacklog.dto.SprintDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,7 +51,7 @@ public class SecurityController {
 	
 	@RequestMapping("/daily/{userName}")
 	public String showDaily(@PathVariable("userName")String userName){
+
 		return "dailyreport";
 	}
-	
 }
