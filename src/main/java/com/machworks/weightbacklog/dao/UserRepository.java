@@ -7,5 +7,6 @@ import com.machworks.weightbacklog.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-
+	User findByUserName(String userName);
+	Long countByUserName(String userName);
 }

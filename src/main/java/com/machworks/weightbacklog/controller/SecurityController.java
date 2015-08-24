@@ -20,6 +20,18 @@ public class SecurityController {
 		return "index";
 	}
 	
+	@RequestMapping("/login")
+	public String login(@RequestParam(value="userName")String userName, @RequestParam(value="password")String password){
+		UserDto user = new UserDto();
+		user.setId(service.generateId());
+		user.setUserName(userName);
+		user.setPassword(password);
+		if(!service.isExistUser(user)){
+			return registerUser(userName,password);
+		}
+		return showDaily(userName);
+	}
+	
 	@RequestMapping("/register")
 	public String registerUser(@RequestParam(value="userName")String userName, @RequestParam(value="password")String password){
 		UserDto user = new UserDto();
